@@ -1,0 +1,2 @@
+King
+1.Metamask发送1eth(关卡要求)到合约中即可
