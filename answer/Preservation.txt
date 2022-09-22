@@ -1,0 +1,21 @@
+Preservation
+------------------------------------
+正如前面delegate提到的，使用delegatecall调用库可能是有风险的。对于拥有自己状态的合约库来说尤其如此。
+这个例子演示了为什么library要使用关键字来构建库，因为它会阻止库存储和访问状态变量。
+------------------------------------
+1.打开Remix
+2.将Preservation合约复制进文件
+3.将以代码放入同一文件中
+contract Preservation1{
+    address public timeZone1Library;
+    address public timeZone2Library;
+    address public owner;
+
+    function setTime(uint256 player) public {
+        owner = address(uint160(player));
+    }
+}
+4.部署Preservation1合约
+5.生成Preservation合约实例
+6.调用Preservation合约的setFirstTime方法，传入Preservation1合约地址
+7.调用Preservation合约的setFirstTime方法，传入新owner地址
