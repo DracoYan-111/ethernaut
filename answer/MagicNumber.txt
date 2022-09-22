@@ -1,0 +1,6 @@
+MagicNumber
+1.F12打开控制台
+2.输入以下命令
+await web3.eth.sendTransaction({from:player,data:"0x600a600c600039600a6000f3602A60805260206080f3"}
+3.查看以上命令返回值中的contractAddress
+4.调用MagicNumber合约的setSolver方法，传入contractAddress
